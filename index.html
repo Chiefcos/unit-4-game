@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-md-6">
+          <h1>Welcome to the Crystal Collector game</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <h2>
+            Count:
+            <p id="random-number"></p>
+          </h2>
+        </div>
+        <div class="col-md-6 text-center">
+          <h2>
+            Your Count:
+            <p id="your-score"></p>
+          </h2>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-3">
+          <img
+            id="crystal-one"
+            class="rounded crystal"
+            src="./assets/images/crystalone.jpg"
+            alt="Crystal One"
+            width="250px"
+          />
+        </div>
+        <div class="col-md-3">
+          <img
+            id="crystal-two"
+            class="rounded crystal"
+            src="./assets/images/crystaltwo.jpg"
+            alt="Crystal Two"
+            width="250px"
+          />
+        </div>
+        <div class="col-md-3">
+          <img
+            id="crystal-three"
+            class="rounded crystal"
+            src="./assets/images/crystalthree.jpg"
+            alt="Crystal Three"
+            width="250px"
+          />
+        </div>
+        <div class="col-md-3">
+          <img
+            id="crystal-four"
+            class="rounded crystal"
+            src="./assets/images/crystalfour.jpg"
+            alt="Crystal four"
+            width="250px"
+          />
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-md-6 text-center">
+          <h2>
+            Wins:
+            <p id="wins"></p>
+          </h2>
+        </div>
+        <div class="col-md-6 text-center">
+          <h2>
+            Losses:
+            <p id="losses"></p>
+          </h2>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/javascript/game.js"></script>
+  </body>
+</html>
