@@ -13,6 +13,11 @@ $(document).ready(function() {
   var input;
   var check = false;
 
+  // these are the sound effects that play when you win or lose
+  var winningSound = document.getElementById("win");
+  var losingSound = document.getElementById("lose");
+  var gameOverSound = document.getElementById("gameover");
+
   //   Here we initialize a function to start the game whenever the function is called
   function initializeGame() {
     crystalOne = 0;
@@ -47,6 +52,7 @@ $(document).ready(function() {
     $("#random-number").html(randomNumber);
     $("#wins").html(wins);
     $("#losses").html(losses);
+    $("#your-score").html(totalScore);
   }
 
   // We initialize the game
@@ -64,18 +70,44 @@ $(document).ready(function() {
       wins = wins + 1;
       check = true;
       $("#wins").html(wins);
-      alert("You win!");
+      $(".pic1").css("display", "block");
+      setTimeout(function() {
+        winningSound.play();
+      }, 2000);
+      setTimeout(function() {
+        $(".pic1").css("display", "none");
+      }, 3600);
     }
 
     // if our totalscore doesn't match what the random number is than we lose
     if (randomNumber < totalScore) {
       losses = losses + 1;
       $("#losses").html(losses);
-      alert("You Lose!");
       check = true;
+      $(".pic2").css("display", "block");
+      losingSound.play();
+      setTimeout(function() {
+        $(".pic2").css("display", "none");
+      }, 5000);
     }
     // Here we reset the game
     if (check) {
+      if (wins + losses === 10) {
+        $(".gameover").show();
+        gameOverSound.play();
+        if (wins > losses) {
+          $(".subline").html("You Win!! <br /> Congratulations");
+        }
+        $(".resetbutton").on("click", function() {
+          $(".gameover").hide();
+          initializeGame();
+          wins = 0;
+          losses = 0;
+          $("#wins").html(wins);
+          $("#losses").html(losses);
+        });
+        return;
+      }
       initializeGame();
     }
   });

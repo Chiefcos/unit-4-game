@@ -13,25 +13,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Unit 4 Game</title>
   </head>
   <body>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-4 mt-5 position-absolute mx-auto">
+        <iframe
+          src="https://giphy.com/embed/l46CtynlAiRNzfsA0"
+          width="480"
+          height="200"
+          frameBorder="0"
+          class="giphy-embed pic1 rounded mt-5"
+          allowFullScreen
+        ></iframe>
+        <audio id="win" class="invisible" src="./winning.mp3"></audio>
+        <iframe
+          src="https://giphy.com/embed/nYogYgSmIJaIo"
+          width="480"
+          height="270"
+          frameBorder="0"
+          class="giphy-embed pic2 rounded mt-5"
+          allowFullScreen
+        ></iframe>
+        <audio id="lose" class="invisible" src="./lose.mp3"></audio>
+      </div>
+    </div>
+    <div class="gameover col-md-12 position-absolute rounded text-center">
+      <h2 class="align-middle">Game Over</h2>
+      <h3 class="subline">You lose buster</h3>
+      <button class="btn-lg btn-primary resetbutton">Try Again</button>
+      <audio id="gameover" class="invisible" src="./gameover.mp3"></audio>
+    </div>
     <div class="container">
-      <div class="row justify-content-center mt-5 mb-5">
-        <div class="col-md-6">
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-6 text-center">
           <h1>Welcome to the Crystal Collector game</h1>
+          <p class="subtitle">
+            Collect the crystal to match the Weigh in<br />
+            Be wary for the balance is unstable<br />
+            Getting too many will tip the scales and wake the Mad Hatter<br />
+            You have 10 tries to make due<br />
+            Fail and you pay your dues
+          </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 text-center">
           <h2>
-            Count:
+            Weigh in:
             <p id="random-number"></p>
           </h2>
         </div>
         <div class="col-md-6 text-center">
           <h2>
-            Your Count:
+            Your Pouch:
             <p id="your-score"></p>
           </h2>
         </div>
@@ -89,7 +124,7 @@
           </h2>
         </div>
       </div>
-      <div class="row"></div>
+      <div class="row justify-content-center"></div>
     </div>
     <script src="./assets/javascript/game.js"></script>
   </body>
